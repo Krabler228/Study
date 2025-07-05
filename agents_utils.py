@@ -1,5 +1,7 @@
 import json
 import os
+import uuid
+from datetime import datetime
 
 
 def age_is_right(user_age)-> int:
@@ -9,8 +11,6 @@ def age_is_right(user_age)-> int:
     except ValueError:
         print('Invalid age')
         return None
-
-
 
 
 def true_age(validated_age, user_name):
@@ -33,6 +33,8 @@ def is_agent_ready(validated_age, user_name):
         return (f"Агент {user_name} готов к работе")
     elif validated_age >= 65:
         return (f" Агент {user_name} последний понедельник доживает")
+    return None
+
 
 def asign_skills(validated_age):
     if validated_age < 18:
@@ -46,9 +48,11 @@ def asign_skills(validated_age):
 def agent_card(validated_age, user_name, asign_skills):
     skills = asign_skills(validated_age)
     agent = {
+        'id': str(uuid.uuid4()),
         'name': user_name,
         'age': validated_age,
-        'skills': skills
+        'skills': skills,
+        'ragistration date': datetime.now().isoformat(),
     }
     return agent
 

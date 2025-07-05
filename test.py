@@ -1,4 +1,4 @@
-from agents_utils import age_is_right
+from agents_utils import age_is_right, asign_skills
 import pytest
 
 def test_age_is_right():
@@ -8,12 +8,10 @@ def test_age_is_right():
     assert age_is_right('-5') == -5
     print("Все тесты для age_is_right пройдены")
 
-from agents_utils import save_agent_card
 
-test_agent = {
-    "name": "Testov",
-    "age": 25,
-    "skills": ["Слежка", "Коммуникация"]
-}
 
-save_agent_card(test_agent)
+def test_asign_skills():
+    assert asign_skills(10) == ['Планирование', 'Основы программирования']
+    assert asign_skills(30) == ['Програмирование', 'Слежка', 'Коммуникация']
+    assert asign_skills(50) == ['Аналитика','Управление']
+    print("Все тесты для asign_skills пройдены")
