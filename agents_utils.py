@@ -2,7 +2,11 @@ import json
 import os
 import uuid
 from datetime import datetime
+import random
 
+low_skills = ['Экстремальное вождение', 'Взлом', 'Планирование']
+midle_skills = ['Диверсия', 'Слежка', 'Внедрение']
+high_skills = ['Аналитика', 'Управление операциями', 'Экстренная эвакуация']
 
 def age_is_right(user_age)-> int:
     try:
@@ -38,11 +42,11 @@ def is_agent_ready(validated_age, user_name):
 
 def asign_skills(validated_age):
     if validated_age < 18:
-        return ['Планирование', 'Основы программирования']
+        return random.choice(low_skills)
     elif validated_age >= 18 and validated_age <= 40:
-        return ['Програмирование', 'Слежка', 'Коммуникация']
+        return random.choice(midle_skills), random.choice(low_skills)
     elif validated_age >= 40:
-        return ['Аналитика','Управление']
+        return random.choice(high_skills), random.choice(midle_skills), random.choice(low_skills)
 
 
 def agent_card(validated_age, user_name, asign_skills):
