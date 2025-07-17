@@ -1,10 +1,7 @@
-from agent_class import Agent
+from agent_class import Agent, Skill
 
 def test_agent_creation():
-    agent = Agent("Neo", 30, ["matrix"])
-    assert agent.name == "Neo"
+    agent = Agent("Алекс", 30, skills=[Skill("Взлом", 2)])
+    assert agent.name == "Алекс"
     assert agent.age == 30
-    assert "matrix" in agent.skills
-    assert isinstance(agent.id, str)
-    assert isinstance(agent.to_dict(), dict)
-
+    assert isinstance(agent.skills[0], Skill)

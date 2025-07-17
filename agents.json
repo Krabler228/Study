@@ -50,4 +50,5 @@
         ],
         "ragistration date": "2025-07-05T11:08:10.055694"
     }
-]
+]{"name": "Denis", "age": 27, "skills": ["stealth", "hacking"], "id": "ad0f4f32-0896-4a1c-a191-9804ecf0419f", "created_at": "2025-07-14T07:21:02.987072"}
+{"name": "Денис", "age": 27, "skills": [{"skill": "stealth", "lvl": 1}, {"skill": "hacking", "lvl": 2}], "id": "b235db2f-3d8e-4672-903b-1b0e3d76036c", "created_at": "2025-07-17T11:41:13.637096"}
