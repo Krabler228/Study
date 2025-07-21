@@ -1,15 +1,25 @@
-from agent_class import Agent, Skill
+
+
+from agent_class import FieldAgent, AnalystAgent, SpyAgent
 import json
+
+AGENT_TYPES = {
+    "field": FieldAgent,
+    "analyst": AnalystAgent,
+    "spy": SpyAgent,
+}
 
 def main():
     name = input("Enter name: ")
     age = int(input("Enter age: "))
 
 
-    skills = [Skill("stealth", 1), Skill("hacking", 2)]
-
-
-    agent = Agent(name, age, skills=skills)
+    agent_type_key = input("Выберите и введите класс агента из доступных классов (field/ analyst/ spy:").strip().lower()
+    AgentClass = AGENT_TYPES.get(agent_type_key)
+    if AgentClass is None:
+        print("Ошибка!")
+    else:
+        agent = AgentClass(name, age)
 
 
     print(agent)

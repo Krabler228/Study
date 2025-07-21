@@ -52,3 +52,5 @@
     }
 ]{"name": "Denis", "age": 27, "skills": ["stealth", "hacking"], "id": "ad0f4f32-0896-4a1c-a191-9804ecf0419f", "created_at": "2025-07-14T07:21:02.987072"}
 {"name": "Денис", "age": 27, "skills": [{"skill": "stealth", "lvl": 1}, {"skill": "hacking", "lvl": 2}], "id": "b235db2f-3d8e-4672-903b-1b0e3d76036c", "created_at": "2025-07-17T11:41:13.637096"}
+{"name": "sdflj", "age": 28, "skills": [{"skill": "stealth", "lvl": 1}, {"skill": "hacking", "lvl": 2}], "id": "a5745e09-d0b7-471f-a2ad-e8c345a31a8f", "created_at": "2025-07-21T06:48:33.067359"}
+{"name": "bab", "age": 46, "skills": [{"skill": "Уход от слежки", "lvl": 1}, {"skill": "Социальная инженерия", "lvl": 1}, {"skill": "Манипуляции", "lvl": 1}], "id": "fa7a151a-da0a-4d33-9026-eeaad53e03c3", "created_at": "2025-07-21T07:39:45.950494"}

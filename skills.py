@@ -1,19 +1,36 @@
 import random
 
-low_skills = ['Экстремальное вождение', 'Взлом', 'Планирование']
-midle_skills = ['Диверсия', 'Слежка', 'Внедрение']
-high_skills = ['Аналитика', 'Управление операциями', 'Экстренная эвакуация']
+SKILLS = {
+    "FieldAgent": {
+        "low": ["Экстремальное вождение", "Взлом", "Планирование"],
+        "middle": ["Диверсия", "Слежка"],
+        "high": ["Операции под прикрытием"]
+    },
+    "AnalystAgent": {
+        "low": ["Excel", "Исследование"],
+        "middle": ["SQL", "Python", "Визуализация данных"],
+        "high": ["Аналитика", "Моделирование угроз", "Стратегическое планирование"]
+    },
+    "SpyAgent": {
+        "low": ["Наблюдение", "Уход от слежки"],
+        "middle": ["Внедрение", "Социальная инженерия"],
+        "high": ["Манипуляции", "Допрос под прикрытием"]
+    }
+}
 
+def assign_skills(agent_type: str, age: int) -> list:
+    pool = SKILLS.get(agent_type)
+    if not pool:
+        return []
+    result = []
 
-def asign_skills(age):
     if age <= 25:
-        return random.choice(low_skills)
+        result.append(random.choice(pool["low"]))
     elif 26 <= age <= 45:
-        return random.choice(midle_skills), random.choice(low_skills)
+        result.append(random.choice(pool["middle"]))
+        result.append(random.choice(pool["high"]))
     elif age >= 46:
-        return (
-            random.choice(high_skills),
-            random.choice(midle_skills),
-            random.choice(low_skills),
-        )
-    return None
+        result.append(random.choice(pool["low"]))
+        result.append(random.choice(pool["middle"]))
+        result.append(random.choice(pool["high"]))
+    return result
