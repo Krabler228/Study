@@ -54,3 +54,37 @@
 {"name": "Денис", "age": 27, "skills": [{"skill": "stealth", "lvl": 1}, {"skill": "hacking", "lvl": 2}], "id": "b235db2f-3d8e-4672-903b-1b0e3d76036c", "created_at": "2025-07-17T11:41:13.637096"}
 {"name": "sdflj", "age": 28, "skills": [{"skill": "stealth", "lvl": 1}, {"skill": "hacking", "lvl": 2}], "id": "a5745e09-d0b7-471f-a2ad-e8c345a31a8f", "created_at": "2025-07-21T06:48:33.067359"}
 {"name": "bab", "age": 46, "skills": [{"skill": "Уход от слежки", "lvl": 1}, {"skill": "Социальная инженерия", "lvl": 1}, {"skill": "Манипуляции", "lvl": 1}], "id": "fa7a151a-da0a-4d33-9026-eeaad53e03c3", "created_at": "2025-07-21T07:39:45.950494"}
+{
+    "name": "Sasha",
+    "age": 28,
+    "skills": [
+        {
+            "skill": "Диверсия",
+            "lvl": 1
+        },
+        {
+            "skill": "Операции под прикрытием",
+            "lvl": 1
+        }
+    ],
+    "id": "5378da83-1a1b-44dc-bc4d-5941f25a1435",
+    "created_at": "2025-07-25T11:30:16.208160",
+    "agent_type": "FieldAgent"
+}
+{
+    "name": "фва",
+    "age": 29,
+    "skills": [
+        {
+            "skill": "Социальная инженерия",
+            "lvl": 1
+        },
+        {
+            "skill": "Допрос под прикрытием",
+            "lvl": 1
+        }
+    ],
+    "id": "dbe4c830-5d02-4971-a736-cfdde4f9e43e",
+    "created_at": "2025-07-26T09:56:05.172337",
+    "agent_type": "SpyAgent"
+}

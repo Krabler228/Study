@@ -4,6 +4,7 @@ from skills import assign_skills
 
 
 class Skill:
+    __slots__ = ['skill', 'lvl']
     def __init__(self, skill: str, lvl: int = 1):
         self.skill = skill
         self.lvl = lvl
@@ -16,13 +17,21 @@ class Skill:
             "skill": self.skill,
             "lvl": self.lvl
         }
-
+    @classmethod
+    def from_dict(cls, data):
+        return cls(skill=data["skill"], lvl=data["lvl"])
     def lvl_up(self):
         self.lvl += 1
     def __eq__(self, other):
         return isinstance(other, Skill) and self.skill == other.skill and self.lvl == other.lvl
 
 class BaseAgent:
+    __slots__ = [
+        '_name', '_age',
+        '_BaseAgent__skills',
+        '_BaseAgent__id',
+        '_BaseAgent__created_at'
+    ]
     def __init__(self, name: str, age: int, skills: list[Skill] = None):
         self._name = name
         self._age = age
@@ -74,8 +83,17 @@ class BaseAgent:
             "age": self.age,
             "skills": [skill.to_dict() for skill in self.__skills],
             "id": self.__id,
-            "created_at": self.__created_at
+            "created_at": self.__created_at,
+            "agent_type": self.__class__.__name__
         }
+    @classmethod
+    def from_dict(cls, data: dict):
+        skills = [Skill.from_dict(s) for s in data["skills"]]
+        return cls(
+            name=data["name"],
+            age=data["age"],
+            skills= skills
+        )
 
     def __str__(self):
         skill_list = ", ".join(str(skill) for skill in self.__skills)

@@ -24,9 +24,8 @@ def main():
 
     print(agent)
 
-
     with open("agents.json", "a", encoding="utf-8") as f:
-        json.dump(agent.to_dict(), f, ensure_ascii=False)
+        json.dump(agent.to_dict(), f, ensure_ascii=False, indent=4)
         f.write("\n")
 
 if __name__ == "__main__":
